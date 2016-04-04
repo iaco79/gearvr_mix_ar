@@ -1,4 +1,4 @@
-### Gear VR mixed reality demo using 3d animated models. 
+### Gear VR mixed reality demo with animated 3d models. 
 
 #### Android studio project.
 

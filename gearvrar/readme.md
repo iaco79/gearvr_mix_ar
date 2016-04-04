@@ -1,13 +1,11 @@
-Gear VR mixed reality demo using 3d animated models. 
+### Gear VR mixed reality demo using 3d animated models. 
 
-Android studio project.
+#### Android studio project.
 
-Grab dependencies from:
-	
-	gearvrf : https://github.com/Samsung/GearVRf	
-	oculus mobile sdk : https://developer.oculus.com/downloads/mobile/1.0.0.1/Oculus_Mobile_SDK/
-	vuforia mobile sdk: https://developer.vuforia.com/downloads/sdk  (vuforia-sdk-android-5-5-9)
-
+* Grab dependencies from:
+	* gearvrf :  <https://github.com/Samsung/GearVRf>
+	* oculus mobile sdk : <https://developer.oculus.com/downloads/mobile/1.0.0.1/Oculus_Mobile_SDK/>
+	* vuforia mobile sdk:  <https://developer.vuforia.com/downloads/sdk>  (vuforia-sdk-android-5-5-9) 
 
 	app/libs
 
@@ -32,12 +30,12 @@ Grab dependencies from:
 		libvrapi.so
 		libVuforia.so
 
-Test images (markers) 
-	images\dolphinmarker2.jpg
-	images\trexmarker2.jpg
+##### Test images (markers):
+    images/
+        dolphinmarker2.jpg
+        trexmarker2.jpg
 
-
-In order to deploy in your device, put your oculus osig file in the assets folder.
+* In order to deploy in your device, put your oculus osig file in the assets folder.
 
 
 

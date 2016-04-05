@@ -1,5 +1,7 @@
 ### Gear VR mixed reality demo with animated 3d models. 
 
+Project details blog: [Implementing mixed reality with the Samsung Gear VR ](https://iaco79.wordpress.com/2016/04/05/implementing-mixed-reality-with-the-samsung-gear-vr/)  
+
 #### Android studio project.
 
 * Grab dependencies from:

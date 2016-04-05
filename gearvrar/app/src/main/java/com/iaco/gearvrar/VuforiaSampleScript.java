@@ -135,7 +135,8 @@ public class VuforiaSampleScript extends GVRScript {
         try {
              GVRModelSceneObject rexModel = gvrContext.loadModel("Tyrannosaurus.dae");
              trackedModel = new TrackedModel(gvrContext,mainScene, mAnimationEngine, 2, rexModel);
-            trackedModel.setmModelScale(0.1f);
+            trackedModel.setModelScale(0.3f);
+            trackedModel.setModelYRotate(-90f);
              mTrackedModels.add(trackedModel);
         }
         catch (IOException e) {
@@ -151,7 +152,9 @@ public class VuforiaSampleScript extends GVRScript {
         try {
             GVRModelSceneObject dolphinModel = gvrContext.loadModel("dolphin.dae");
             trackedModel = new TrackedModel(gvrContext,mainScene, mAnimationEngine, 1, dolphinModel);
-            trackedModel.setmModelScale(0.1f);
+            trackedModel.setModelScale(0.15f);
+            trackedModel.setModelYRotate(180f);
+            trackedModel.setModelXRotate(10f);
 
             mTrackedModels.add(trackedModel);
         }
@@ -163,8 +166,8 @@ public class VuforiaSampleScript extends GVRScript {
 
 
 
-    @Override
-    public void onStep() {
+        @Override
+        public void onStep() {
 
         for(TrackedModel model : mTrackedModels)
         {

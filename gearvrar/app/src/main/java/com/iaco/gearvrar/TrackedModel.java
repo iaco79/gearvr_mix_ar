@@ -33,6 +33,9 @@ public class TrackedModel extends GVRSceneObject {
     private float[] vuforiaMVMatrix;
     private float mVuforiaScale;
     private float mModelScale;
+    private float mModelYRotate;
+    private float mModelXRotate;
+
 
     private boolean mTracked;
 
@@ -61,6 +64,8 @@ public class TrackedModel extends GVRSceneObject {
         mTracked=false;
         mHidden=true;
         mModelScale=1.0f;
+        mModelYRotate=0;
+        mModelXRotate=90;
 
 
         this.getTransform().setPosition(0.0f, 0.0f, 0.0f);
@@ -75,14 +80,11 @@ public class TrackedModel extends GVRSceneObject {
         if(mAnimation == null) {
             List<GVRAnimation> animations = mModel.getAnimations();
 
-            Log.i(TAG, "Animations: %d", animations.size());
-
-
             if (animations.size() >= 1) {
 
-                mAnimation = animations.get(0);
-                mAnimation.setRepeatMode(GVRRepeatMode.REPEATED).setRepeatCount(-1);
-                mAnimation.start(mAnimationEngine);
+                mAnimation = animations.get(0); //get the first animation
+                mAnimation.setRepeatMode(GVRRepeatMode.REPEATED).setRepeatCount(-1); //loop the animation
+                mAnimation.start(mAnimationEngine); //start the animation
             }
 
 
@@ -177,7 +179,9 @@ public class TrackedModel extends GVRSceneObject {
         Matrix.multiplyMM(convertedMVMatrix, 0, convertMatrix, 0,
                 vuforiaMVMatrix, 0);
 
-        Matrix.rotateM(convertedMVMatrix, 0, 90, 1, 0, 0);
+        Matrix.rotateM(convertedMVMatrix, 0, mModelXRotate, 1, 0, 0);
+        Matrix.rotateM(convertedMVMatrix, 0, mModelYRotate, 0, 1, 0);
+
         Matrix.scaleM(convertedMVMatrix, 0, mVuforiaScale*mModelScale, mVuforiaScale*mModelScale, mVuforiaScale*mModelScale);
 
         gvrMVMatrix = mScene.getMainCameraRig()
@@ -196,11 +200,27 @@ public class TrackedModel extends GVRSceneObject {
     }
 
 
-    public float getmModelScale() {
+    public float getModelScale() {
         return mModelScale;
     }
 
-    public void setmModelScale(float mModelScale) {
+    public void setModelScale(float mModelScale) {
         this.mModelScale = mModelScale;
+    }
+
+    public float getModelYRotate() {
+        return mModelYRotate;
+    }
+
+    public void setModelYRotate(float mModelYRotate) {
+        this.mModelYRotate = mModelYRotate;
+    }
+
+    public float getModelXRotate() {
+        return mModelXRotate;
+    }
+
+    public void setModelXRotate(float xRotate) {
+        this.mModelXRotate = xRotate;
     }
 }
